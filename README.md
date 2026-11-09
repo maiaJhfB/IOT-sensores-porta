@@ -26,9 +26,15 @@ Comece com cerca de **15 a 25 cm entre os eixos** dos sensores e ajuste na passa
 
 As ligações da tabela são para o Uno R3, que usa lógica de 5 V. Se adaptar o projeto a uma placa de 3,3 V, adapte o nível de tensão de cada saída ECHO antes de conectá-la à placa. [Ficha do HC-SR04](https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf) · [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3/)
 
+## Bibliotecas e pacote da Arduino IDE
+
+O contador com dois HC-SR04 dispensa bibliotecas externas. O único cabeçalho usado pelo programa, `Arduino.h`, já vem com o pacote oficial **Arduino AVR Boards**. O programa mede o pulso de retorno com a função padrão `pulseIn()`.
+
+Se **Arduino Uno** ainda não aparecer na lista de placas, abra **Ferramentas → Placa → Gerenciador de Placas**, procure **Arduino AVR Boards** e instale o pacote publicado pela Arduino. Em seguida, selecione **Ferramentas → Placa → Arduino AVR Boards → Arduino Uno**. [Instalação de pacotes de placas](https://support.arduino.cc/hc/en-us/articles/360016119519-Add-boards-to-Arduino-IDE) · [Seleção de placa e porta](https://support.arduino.cc/hc/en-us/articles/4406856349970-Select-board-and-port-in-Arduino-IDE)
+
 ## Carregar e conferir
 
-1. Abra [ContadorPessoas.ino](ContadorPessoas/ContadorPessoas.ino) na Arduino IDE. Selecione **Arduino Uno** e a porta USB da placa. O programa usa apenas as funções padrão do Arduino.
+1. Abra [ContadorPessoas.ino](ContadorPessoas/ContadorPessoas.ino) na Arduino IDE. Selecione **Arduino Uno** e a porta USB da placa.
 2. Esvazie a passagem, envie o programa e abra o **Monitor Serial a 115200 baud**. Mantenha a passagem vazia até aparecer `Calibrado`. Reinicie com a passagem vazia se mover um sensor ou mudar a superfície de referência.
 3. Faça uma passagem em cada sentido e confira se cada movimento incrementa apenas o total correspondente.
 
